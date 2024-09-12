@@ -1,0 +1,42 @@
+Module Module1
+
+    Sub Main()
+        ' Déclaration des variables
+        Dim jours As Integer
+        Dim distance As Double
+        Dim coutEssence, coutDiesel As Double
+        Dim tarifEssenceJour As Double = 30
+        Dim tarifEssenceKm As Double = 0.85
+        Dim tarifDieselJour As Double = 35
+        Dim tarifDieselKm As Double = 0.65
+
+        ' Saisie du nombre de jours et de la distance
+        Console.WriteLine("Nombre de jours de location ?")
+        jours = Convert.ToInt32(Console.ReadLine())
+
+        Console.WriteLine("Distance à parcourir (en kms) ?")
+        distance = Convert.ToDouble(Console.ReadLine())
+
+        ' Calcul des coûts pour l'essence et le diesel
+        coutEssence = (tarifEssenceJour * jours) + (tarifEssenceKm * distance)
+        coutDiesel = (tarifDieselJour * jours) + (tarifDieselKm * distance)
+
+        ' Comparaison des coûts et affichage du meilleur choix
+        If coutEssence < coutDiesel Then
+            Console.WriteLine("Meilleur choix : Essence")
+        ElseIf coutDiesel < coutEssence Then
+            Console.WriteLine("Meilleur choix : Diesel")
+        Else
+            Console.WriteLine("Les deux options sont égales")
+        End If
+
+        ' Affichage des coûts pour information
+        Console.WriteLine("Coût total essence : " & coutEssence.ToString("F2") & " euros")
+        Console.WriteLine("Coût total diesel : " & coutDiesel.ToString("F2") & " euros")
+
+        ' Message de fin
+        Console.WriteLine("Au revoir")
+        Console.ReadLine()
+    End Sub
+
+End Module
