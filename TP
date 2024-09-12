@@ -13,8 +13,14 @@ Module Module1
         ' Saisie du nombre de jours et de la distance
         Console.WriteLine("Nombre de jours de location ?")
         jours = Convert.ToInt32(Console.ReadLine())
+        'Si l'utilisateur saisit "5" dans la console :Console.ReadLine() va lire "5"
+        '(une chaîne de caractères).Convert.ToInt32("5") convertit la chaîne "5" en l'entier 5.Ensuite,
+        '5 est stocké dans la variable jours.
+        'ToInt32 = méthode utilisée pour convertir une chaîne de caractères (ou un autre type) en un nombre entier.
 
-        Console.WriteLine("Distance à parcourir (en kms) ?")
+
+
+
         distance = Convert.ToDouble(Console.ReadLine())
 
         ' Calcul des coûts pour l'essence et le diesel
